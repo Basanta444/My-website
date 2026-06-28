@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Animation</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Vibur&family=Poppins:wght@400;600&display=swap');
         
         html, body {
             height: 100%;
@@ -11,26 +14,31 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(45deg, #111, #444);
+            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
             background-size: 400% 400%;
             animation: gradientShift 10s ease infinite;
-            font-family: 'bold', bold;
+            /* Fixed the font family here! */
+            font-family: 'Vibur', cursive; 
+            overflow: hidden;
         }
         
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .logo {
             text-align: center;
-            color: white;
+            color: #fff;
         }
         
         .logo b {
-            font-size: 10vh;
+            font-size: 15vh;
+            font-weight: normal;
             position: relative;
-            animation: float 3s ease-in-out infinite;
+            display: inline-block;
+            animation: float 4s ease-in-out infinite;
         }
         
         .logo b span {
@@ -47,15 +55,38 @@
             50% { transform: translateY(-20px); }
         }
         
+        /* Upgraded Neon Glow Effect */
         @keyframes blink {
-            0%, 78% { color: inherit; text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000; }
+            0%, 78% { color: inherit; text-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444, 0 0 40px #ff4444, 0 0 80px #ff4444; }
             79%, 81%, 82% { color: #333; text-shadow: none; }
             80% { text-shadow: none; }
-            83%, 100% { color: inherit; text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000; }
+            83%, 100% { color: inherit; text-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444, 0 0 40px #ff4444, 0 0 80px #ff4444; }
+        }
+
+        /* Added a Back Button */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px #fff;
         }
     </style>
 </head>
 <body>
+    <a href="about.html" class="back-btn">← Back to Website</a>
+    
     <div class="logo">
         <b>He<span>llo</span> <br>
         every<span>one</span></b>

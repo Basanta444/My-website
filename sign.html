@@ -3,105 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup Page</title>
+  <title>Create Account | Basanta's App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
+    
     .signup-container {
       background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
       max-width: 400px;
-      width: 100%;
     }
+
     .signup-container h2 {
-      margin-bottom: 20px;
+      margin-top: 0;
+      color: #333;
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
     }
-    .signup-container label {
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #555;
+      font-weight: 500;
     }
-    .signup-container input[type="text"],
-    .signup-container input[type="email"],
-    .signup-container input[type="password"] {
+
+    .input-group input {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-family: inherit;
+      transition: 0.3s;
     }
-    .signup-container button {
+
+    .input-group input:focus {
+      border-color: #28a745;
+      outline: none;
+      box-shadow: 0 0 8px rgba(40, 167, 69, 0.2);
+    }
+
+    .btn-submit {
       width: 100%;
-      padding: 10px;
+      padding: 14px;
       background-color: #28a745;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
       color: white;
       font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
     }
-    .signup-container button:hover {
+
+    .btn-submit:hover {
       background-color: #218838;
+      transform: translateY(-2px);
     }
-    .error {
-      color: red;
-      margin-bottom: 10px;
+
+    .error-box {
+      background: #ffeaa7;
+      color: #d63031;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 15px;
+      display: none; /* Hidden by default */
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .login-link a { color: #28a745; text-decoration: none; font-weight: 600; }
+    .login-link a:hover { text-decoration: underline; }
+
+    .back-home {
+      position: absolute;
+      top: 20px; left: 20px;
+      color: #555;
+      text-decoration: none;
+      font-weight: 600;
+      background: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
+
+  <a href="index.html" class="back-home">← Back to Home</a>
+
   <div class="signup-container">
     <h2>Create an Account</h2>
-    <form id="signupForm" onsubmit="return validateForm()">
-      <div class="error" id="error-message"></div>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
+    
+    <div class="error-box" id="error-message"></div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+    <form id="signupForm" onsubmit="return validateForm(event)">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Choose a username">
+      </div>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com">
+      </div>
 
-      <label for="confirm-password">Confirm Password</label>
-      <input type="password" id="confirm-password" name="confirm-password" required>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password">
+      </div>
 
-      <button type="submit">Sign Up</button>
+      <div class="input-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Repeat password">
+      </div>
+
+      <button type="submit" class="btn-submit">Sign Up Now</button>
     </form>
+
+    <div class="login-link">
+      Already have an account? <a href="login.html">Log In</a>
+    </div>
   </div>
 
   <script>
-    function validateForm() {
+    function validateForm(event) {
+      event.preventDefault(); // Prevent actual form submission
+
       var username = document.getElementById('username').value;
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       var confirmPassword = document.getElementById('confirm-password').value;
-      var errorMessage = document.getElementById('error-message');
+      var errorBox = document.getElementById('error-message');
+
+      // Reset error box
+      errorBox.style.display = "none";
 
       if (username === "" || email === "" || password === "" || confirmPassword === "") {
-        errorMessage.textContent = "All fields are required.";
-        return false;
-      }
-
-      if (password !== confirmPassword) {
-        errorMessage.textContent = "Passwords do not match.";
+        showError("All fields are required.");
         return false;
       }
 
       if (password.length < 6) {
-        errorMessage.textContent = "Password must be at least 6 characters long.";
+        showError("Password must be at least 6 characters long.");
         return false;
       }
 
+      if (password !== confirmPassword) {
+        showError("Passwords do not match.");
+        return false;
+      }
+
+      // If successful (Frontend Demo)
+      alert('Account Created Successfully! Welcome ' + username + '!');
+      window.location.href = 'login.html'; // Redirect to login page
       return true;
+    }
+
+    function showError(message) {
+      var errorBox = document.getElementById('error-message');
+      errorBox.textContent = message;
+      errorBox.style.display = "block";
     }
   </script>
 </body>

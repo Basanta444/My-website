@@ -1,134 +1,259 @@
-body {
-  font-family: Arial, sans-serif;
+/* =========================================
+   MASTER STYLE.CSS (Maximum Potential)
+   ========================================= */
+
+/* 1. CSS VARIABLES (For easy color management) */
+:root {
+  --primary: #1e90ff;
+  --primary-hover: #0b78d1;
+  --bg-color: #f4f7fa;
+  --text-main: #333333;
+  --text-light: #666666;
+  --white: #ffffff;
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. RESET & BASE STYLES */
+* {
   margin: 0;
   padding: 0;
-  background-image: url('4.jpg'); /* Add background image */
-  background-size: cover; /* Ensure the background image covers the entire background */
-  background-attachment: fixed; /* Make the background image fixed */
-}
-
-header {
-  background-color: rgba(51, 51, 51, 0.8); /* Add some transparency */
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-}
-
-aside {
-background-color: rgba(51, 51, 51, 0.8);
-  padding: 40px;
-  width: 40%; /* Set the width of the sidebar */
-  float: right; /* Float the sidebar to the right */
- /* box-sizing: border-box; Include padding and border in element's total width and height 
-  border: 1px solid #ccc;  Add border around the sidebar */
-}
-
-main {
-  padding: 20px;
-  margin-left: 20%;
-  /* Add margin to the left to accommodate the sidebar */
-}
-
-footer {
-  background-color: rgba(51, 51, 51, 0.8); /* Add some transparency */
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  clear: both; /* Clear both floats */
-}
-h2{
-     color: black;
-}
-p{
-    color: white;
-}
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-image: url('4.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-header {
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-}
-
-aside {
-  background-color: rgba(51, 51, 51, 0.8);
-  padding: 10px;
-  width: 40%;
-  float: right;
-}
-
-main {
-  padding: 20px;
-  margin-right: 30%;
-}
-
-footer {
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  clear: both;
-}
-
-h2, h3 {
-  color: white;
-}
-
-p, ul, label {
-  color: white;
-}
-
-ol {
-  list-style-type: none;
-  padding: 0;
-}
-
-ol li {
-  margin: 5px 0;
-}
-
-a {
-  color: #1e90ff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-input[type="text"], input[type="email"], textarea {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0 10px;
   box-sizing: border-box;
 }
 
-input[type="submit"] {
-  background-color: #1e90ff;
-  color: white;
-  border: none;
+html {
+  scroll-behavior: smooth; /* Smooth scrolling when clicking links */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Standard Container to keep content centered */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 3. MODERN NAVIGATION BAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-brand a {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.nav-brand span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary);
+}
+
+/* Buttons */
+.nav-auth {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
   padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
   cursor: pointer;
+  border: none;
 }
 
-input[type="submit"]:hover {
-  background-color: #0b78d1;
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 4px 10px rgba(30, 144, 255, 0.3);
 }
 
-ul, li{
-    color: black;
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px); /* Slight lift effect */
 }
-h5, a, h2{
-    color: yellow;
-} 
-span{
-    color: black;
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* 4. HERO SECTION (Homepage) */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 20px;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content .highlight {
+  color: var(--primary);
+}
+
+.hero-content p {
+  color: var(--text-light);
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  animation: float 4s ease-in-out infinite; /* Cool floating image animation */
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 5. MAIN LAYOUT (CSS GRID instead of float: right) */
+.main-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 66% Main, 33% Sidebar */
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.main-content {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+}
+
+.main-content h2, .main-content h3 {
+  margin-bottom: 15px;
+  color: var(--text-main);
+}
+
+.main-content p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* 6. SIDEBAR WIDGETS */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.widget {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+}
+
+.widget h3 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--bg-color);
+  padding-bottom: 10px;
+}
+
+.widget ul {
+  list-style: none;
+}
+
+.widget ul li {
+  margin-bottom: 10px;
+}
+
+.widget ul li a {
+  text-decoration: none;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.widget ul li a:hover {
+  color: var(--primary);
+  padding-left: 5px; /* Nice sliding hover effect */
+}
+
+/* 7. FOOTER */
+.footer {
+  background-color: #1a1a2e; /* Very dark modern blue/black */
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN (For Mobile Phones)
+   ========================================= */
+@media (max-width: 850px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  .main-layout {
+    grid-template-columns: 1fr; /* Stacks the sidebar under the main content */
+  }
+
+  .nav-links, .nav-auth {
+    display: none; /* In a real app, you'd add a hamburger menu here! */
+  }
 }

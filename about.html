@@ -3,61 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us</title>
+  <title>About Us | Basanta's Modern Website</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Temporary inline styles for the About page specific hero (will move to style.css later) -->
   <style>
-      body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-image: url('3.jpg'); /* Add background image */
-  background-size: cover; /* Ensure the background image covers the entire background */
-  background-attachment: fixed; /* Make the background image fixed */
-}
+    .about-hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .video-container {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      text-align: center;
+    }
+    .video-container video {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>About Us</h1>
-</header>
-
-<main>
-  <h3>Our Story</h3>
-  <p>Welcome to our website. Here is some information about our website.</p>
-  
-  <h3>Our Mission</h3>
-  <p>To provide the best service to our customers.</p>
-  
-</main>
-
-<aside>
-  <h3>Quick Links</h3>
-  <nav>
-    <ol>
+  <!-- Modern Top Navigation Bar -->
+  <nav class="navbar container">
+    <div class="nav-brand">
+      <a href="index.html">Basanta<span>.</span></a>
+    </div>
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="about.html" class="active">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-    </ol>
+    </ul>
+    <div class="nav-auth">
+      <a href="login.html" class="btn btn-outline">Login</a>
+      <a href="sign.html" class="btn btn-primary">Sign Up</a>
+    </div>
   </nav>
-</aside>
 
-<footer>
-  <p>&copy; 2024 Simple Website. Hello - Basanta</p>
-</footer>
+  <div class="main-layout container" style="margin-top: 20px;">
+    <main class="main-content">
+      
+      <!-- Upgraded Hero Section using your 3.jpg -->
+      <div class="about-hero">
+        <h1>Our Story</h1>
+        <p>Discover the passion behind the pixels.</p>
+      </div>
 
-<p>Some information </p>
-  <!-- Add Video Element -->
-  <video width="320" height="240" controls style="display:block;margin-top:20px;">
-    <source src="5.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+      <div class="text-content">
+        <h3>Who We Are</h3>
+        <p>Welcome to our beautifully upgraded website. Here is some information about our journey, our goals, and how we got here. We believe in building stunning front-end experiences.</p>
+        
+        <h3>Our Mission</h3>
+        <p>To provide the absolute best digital experience to our users through clean design and smooth interactions.</p>
+      </div>
+
+      <!-- Upgraded Video Player using your 5.mp4 -->
+      <div class="video-container">
+        <h3>Watch Our Intro</h3>
+        <video controls>
+          <source src="5.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="widget">
+        <h3>Interactive Fun</h3>
+        <ul>
+          <!-- Moved your stray links here! -->
+          <li><a href="animation.html">✨ Cool Animation</a></li>
+          <li><a href="game.html">🎮 Tic-Tac-Toe Game</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Modern Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Basanta Khadka. Designed with passion.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
-
-<nav>
-    <ul>
-      <li><a href="animation.html">Animation</a></li>
-      <li><a href="game.html">Tic-Tac-Toe</a></li>
-    </ul>
-  </nav>
