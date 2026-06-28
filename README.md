@@ -19,11 +19,8 @@ Welcome to my very first website project! Originally built years ago when I was 
 - Vanilla JavaScript (Form validation, Game logic)
 - Google Fonts (Poppins & Vibur)
 
-## 💻 How to Run Locally
-
-1. Clone this repository: `git clone https://github.com/Basanta444/My-website.git`
-2. Open the folder in VS Code.
-3. Use the **Live Server** extension to open `index.html`.
+**Live Demo:** [Click here to view the website](https://basanta444.github.io/My-website/)
+   
 
 ---
 
