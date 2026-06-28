@@ -3,47 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Website</title>
+  <title>Basanta's Portfolio</title>
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Connecting to the Master CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Simple Website</h1>
-  <nav>
-    <ol>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="sign.html">Signup</a></li>
-      </ol>
-  </nav>
-
-</header>
-
-<main>
-  <h3>Welcome to my website!</h3>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
+  <!-- Modern Navigation Bar -->
+  <nav class="navbar container">
+    <div class="nav-brand">
+      <a href="index.html">Basanta<span>.</span></a>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    
+    <div class="nav-auth">
+      <a href="login.html" class="btn btn-outline">Login</a>
+      <a href="sign.html" class="btn btn-primary">Sign Up</a>
+    </div>
   </nav>
 
-  <p>This is a simple website</p>
-  
-  </main>
+  <!-- Stunning Hero Section (This uses your 2.jpg beautifully) -->
+  <header class="hero container">
+    <div class="hero-content">
+      <h1>Welcome to My <br><span class="highlight">Upgraded World</span></h1>
+      <p>I took my very first, simple website and transformed it into a modern, responsive, and beautiful front-end experience. Take a look around!</p>
+      
+      <div style="margin-top: 20px;">
+        <a href="about.html" class="btn btn-primary">Discover More</a>
+        <a href="contact.html" class="btn btn-outline" style="margin-left: 10px;">Get in Touch</a>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <!-- Your image is no longer at the bottom, it's floating right here! -->
+      <img src="2.jpg" alt="Hello nice to meet you">
+    </div>
+  </header>
 
-<aside>
-  <h3>Sidebar</h3>
-  <p>This is some content</p>
-</aside>
+  <!-- Main Content Area with CSS Grid -->
+  <div class="main-layout container">
+    
+    <!-- Left Side: Main Content -->
+    <main class="main-content">
+      <h2>🌟 What's New?</h2>
+      <p>The entire structure has been rebuilt. It now uses <strong>CSS Flexbox</strong> and <strong>CSS Grid</strong> to create a smooth, modern layout instead of the old float-based design. No more text stretching across the whole screen!</p>
+      
+      <div style="background: var(--bg-color); padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid var(--primary);">
+        <h3>Did you know?</h3>
+        <p>You can check out my fully functional JavaScript projects right from the sidebar. Everything runs beautifully right in your browser!</p>
+      </div>
+    </main>
 
-<footer>
-  <p>&copy; 2024 Simple Website. Hello - Basanta khadka</p>
-</footer>
-<p></p>
- <!-- Add Image below the paragraph -->
-  <img src="2.jpg" alt="Hello nice to meet you" style="width:100%;max-width:600px;margin-top:20px;">
+    <!-- Right Side: Sidebar -->
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>👤 About Me</h3>
+        <p>Hi! I'm Basanta Khadka. Welcome to my coding playground.</p>
+      </div>
+      
+      <div class="widget">
+        <h3>🚀 Cool Projects</h3>
+        <ul>
+          <li><a href="animation.html">✨ Neon Animation</a></li>
+          <li><a href="game.html">🎮 Tic-Tac-Toe Game</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Modern Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Basanta Khadka. Built with passion.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

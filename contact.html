@@ -3,61 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Contact Us | Basanta's Modern Website</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .contact-hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('1.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .form-group { margin-bottom: 20px; }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      transition: 0.3s;
+    }
+    
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #1e90ff;
+      outline: none;
+      box-shadow: 0 0 8px rgba(30, 144, 255, 0.2);
+    }
+
+    .audio-card {
+      background: #f1f2f6;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .audio-card audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-<style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-image: url('1.jpg'); /* Add background image */
-  background-size: cover; /* Ensure the background image covers the entire background */
-  background-attachment: fixed; /* Make the background image fixed */
-}
-</style>
 <body>
 
-<header>
-  <h1>Contact Us</h1>
-</header>
-
-<main>
-  <h2>Get in Touch</h2>
-  <form action="submit_form.php" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-    
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" required></textarea><br><br>
-    
-    <input type="submit" value="Submit">
-  </form>
-</main>
-
-<aside>
-  <h3>Contact Info</h3>
-  <p>Email: basanta@gmail.com</p>
-  <p>Phone: 9844444444</p>
-  <nav>
-    <ol>
+  <!-- Modern Top Navigation -->
+  <nav class="navbar container">
+    <div class="nav-brand"><a href="index.html">Basanta<span>.</span></a></div>
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ol>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-auth">
+      <a href="login.html" class="btn btn-outline">Login</a>
+      <a href="sign.html" class="btn btn-primary">Sign Up</a>
+    </div>
   </nav>
-</aside>
 
-<footer>
-  <p>&copy; 2024 Simple Website. Hello - Basanta</p>
-</footer>
-<p>Music</p>
-  <audio controls style="display:block;margin-top:20px;">
-    <source src="6.m4a" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <div class="main-layout container" style="margin-top: 20px;">
+    <main class="main-content">
+      
+      <!-- Upgraded Hero utilizing 1.jpg -->
+      <div class="contact-hero">
+        <h1>Get In Touch</h1>
+        <p>We'd love to hear from you. Drop us a message below!</p>
+      </div>
+
+      <!-- Modern Frontend-only Form -->
+      <form class="contact-form" id="contactForm">
+        <h2>Send a Message</h2>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+      </form>
+    </main>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Contact Info</h3>
+        <p>📧 <strong>Email:</strong><br> basanta@gmail.com</p>
+        <p>📞 <strong>Phone:</strong><br> +977 9844444444</p>
+      </div>
+
+      <!-- Beautifully Integrated Audio -->
+      <div class="audio-card">
+        <h3>🎵 Vibe With Us</h3>
+        <p>Listen to some music while you write to us!</p>
+        <audio controls>
+          <source src="6.m4a" type="audio/mp4">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Basanta Khadka. Designed with passion.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Frontend-only form submission logic
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevents page reload
+      alert('Thank you for reaching out! Your message has been sent successfully. (Frontend Demo)');
+      this.reset(); // Clears the form
+    });
+  </script>
 </body>
 </html>
